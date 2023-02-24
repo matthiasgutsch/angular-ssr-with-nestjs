@@ -1,20 +1,33 @@
-<header>
-  <mat-toolbar color="primary">
-    <span class="toolbar-label">Angular SSR With NestJS</span>
-    <nav class="main-nav">
-      <ul class="left-menu">
-        <li class="menu-item" *ngFor="let menu of menuItems" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-          <a class="menu-item-link" [routerLink]="menu.link" [title]="menu.title">{{ menu.title }}</a>
-        </li>
-      </ul>
-      <ul class="right-menu">
-        <li class="menu-item">
-          <a class="menu-item-link" href="https://github.com/MehmetSert/angular-ssr-with-nestjs" target="_blank" title="Github"><img src="assets/svg/logo-github.svg" alt="Github"></a>
-        </li>
-        <li class="menu-item">
-          <a class="menu-item-link" href="https://kodumunblogu.net/auth/mehmet-sert-11" target="_blank" title="Kodumunblogu.net"><img src="assets/svg/code.svg" alt="Kodumunblogu.net"></a>
-        </li>
-      </ul>
-    </nav>
-  </mat-toolbar>
-</header>
+<section class="header header-fixed-top">
+    <div class="container">
+
+        <div class="navbar">
+
+            <div class="navbar-header">
+                <a class="navbar-brand" [routerLink]="['/']"><img alt="Logo" src="https://ict-group.it/wp-content/themes/ict/images/logo.svg" class="header-brand"></a>
+            </div>
+
+
+
+            <ul class="nav navbar-nav menu-hidden">
+
+
+                <li *ngFor="let menu of menuItems" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a [routerLink]="menu.link" [title]="menu.title">{{ menu.title }}</a>
+                </li>
+
+
+                <li>
+                    <a data-toggle="modal" data-target="#search"><i class="fa fa-search" aria-hidden="true"></i> </a>
+                </li>
+
+
+
+
+                <li class="dropdown menu-large">
+                    <a class="dropdown-toggle btn-blue-menu sections">Prodotti</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

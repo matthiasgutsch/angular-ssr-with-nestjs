@@ -1,9 +1,52 @@
-<main *ngIf="user">
-    <h1 [innerHTML]="user.title.rendered"></h1>
-    <h3 [innerHTML]="user.excerpt.rendered"></h3>
-    <p [innerHTML]="user.content.rendered"></p>
+<section class="feature-header press-header product-detail-slider" *ngIf="element" [ngStyle]="{ 'background-image': '-webkit-linear-gradient(180deg, rgba(61,86,114,0.2), rgba(61,86,114,0.9), rgba(61,86,114,1)), url(' + element.jetpack_featured_media_url + ')' }">
+    <div class="container">
+        <div class="col-sm-10 col-sm-offset-1">
 
-    <ng-container *ngIf="isErr">
-        There was a problem in the API communication.<br>Please try again later.
-    </ng-container>
-</main>
+            <h3 class="text-center">News</h3>
+
+            <h1 class="text-center" [innerHTML]="element.title.rendered"></h1>
+
+
+        </div>
+    </div>
+</section>
+
+
+<section class="news-detail" *ngIf="element">
+
+    <div class="container">
+        <div class="col-sm-8">
+            <div class="col-sm-11 no-margin news-content">
+
+                <img [src]="element.jetpack_featured_media_url" class="img-responsive">
+
+
+                <div class="clearfix"></div>
+                <br><br>
+                <div class="clearfix"></div>
+
+
+                <p [innerHTML]="element.content.rendered"></p>
+
+
+                <div class="clearfix"></div>
+                <hr>
+                <div class="clearfix"></div>
+
+                <div class="addthis_inline_share_toolbox"></div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 sidebar-news">
+            <div class="col-md-12 col-sm-12 no-margin">
+
+
+                <h3><strong>Ultime News</strong></h3><br>
+
+
+            </div>
+            <div class="clearfix"></div>
+
+        </div>
+    </div>
+</section>

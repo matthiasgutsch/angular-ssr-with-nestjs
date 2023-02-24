@@ -13,7 +13,7 @@ export class UserDetailComponent implements OnInit {
 
   showSpinner = true;
   userId;
-  user: any;
+  element: any = [];
 
   isErr = false;
 
@@ -32,9 +32,9 @@ export class UserDetailComponent implements OnInit {
   }
 
   getUser() {
-    this.user = this.userService.getUser(this.userId).subscribe((res) => {
-      this.user = res[0];
-        this.seoService.updateTitle(this.user.title.rendered + '');
+    this.element = this.userService.getUser(this.userId).subscribe((res) => {
+      this.element = res[0];
+        this.seoService.updateTitle(this.element.title.rendered + '');
         this.showSpinner = false;
       });
 
