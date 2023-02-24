@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { UserDetailComponent } from './components/users/user-detail/user-detail.component';
+import { UsersComponent } from './components/users/users.component';
 
 
 const routes: Routes = [
-  { path: '', loadChildren: () => import('./components/home/home.module').then(m => m.HomeModule), pathMatch: 'full' },
-  { path: 'about', loadChildren: () => import('./components/about/about.module').then(m => m.AboutModule) },
-  { path: 'users', loadChildren: () => import('./components/users/users.module').then(m => m.UsersModule) }
+  { path: '', component: UsersComponent, pathMatch: 'full'},
+  { path: ':users', component: UsersComponent },
+  { path: ':news', component: UsersComponent },
+  { path: 'news/:slug', component: UserDetailComponent },
 ];
 
 @NgModule({

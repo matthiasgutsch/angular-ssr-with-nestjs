@@ -1,15 +1,56 @@
-<main>
-    <h1>Users</h1>
+<section class="feature-header press-header" style="background-image: -webkit-linear-gradient(-90deg, rgba(61,86,114,0.2), rgba(61,86,114,1)),url(https://ict-group.it/wp-content/themes/ict/images/news.jpg); background-image: linear-gradient(-90deg, rgba(61,86,114,0.2), rgba(61,86,114,1)),url(https://ict-group.it/wp-content/themes/ict/images/news.jpg);
+    background-size: cover; background-position: center center;">
+    <div class="container">
+        <div class="col-sm-12">
 
-    <ul class="user-list">
-        <li class="user" *ngFor="let user of users">
-            <a class="user-link" routerLink="/users/{{ user.slug }}">
-                <strong class="user-name">{{ user.title.rendered}}</strong>
-            </a>
+            <h1>News</h1>
+        </div>
+    </div>
+</section>
 
-        </li>
-    </ul>
-    <ng-container *ngIf="isErr">
-        There was a problem in the API communication.<br>Please try again later.
-    </ng-container>
-</main>
+
+<section class="news-list">
+    <div class="container">
+        <div class="row clearfix">
+
+            <div class="news-list-wrapper clearfix">
+
+
+                <div class="col-sm-10 col-sm-offset-1">
+
+
+
+
+                    <div class="news-box-wrapper clearfix item" *ngFor=" let news of newsList; let i = index">
+
+                        <div class="col-md-6 col-sm-12 no-margin">
+                            <a [routerLink]="['/' + '/news',news.slug]"><img [src]="news.jetpack_featured_media_url" alt="" class="img-responsive"></a>
+
+                        </div>
+                        <div class="col-md-6 col-sm-12 news-box">
+
+                            <div class="content">
+                                <h5></h5>
+                                <a [routerLink]="['/' + '/news',news.slug]" [title]="news.title.rendered">
+                                    <h3 [innerHTML]="news.title.rendered"></h3>
+                                </a>
+
+                                <p [innerHTML]="news.excerpt.rendered"></p>
+                                <div class="clearfix"></div><br>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="clearfix"></div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>

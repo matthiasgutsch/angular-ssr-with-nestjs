@@ -8,10 +8,13 @@ import { HeaderComponent } from './components/header/header.component';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {HttpClientModule} from "@angular/common/http";
-
+import { UserDetailComponent } from './components/users/user-detail/user-detail.component';
+import { UsersComponent } from './components/users/users.component';
 @NgModule({
   declarations: [
     AppComponent,
+    UserDetailComponent,
+    UsersComponent,
     HeaderComponent
   ],
   imports: [

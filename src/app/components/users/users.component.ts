@@ -10,8 +10,9 @@ import {SeoService} from "../../services/seo.service";
 export class UsersComponent implements OnInit {
 
   showSpinner = true;
-  users: any = [];
+  newsList: any = [];
   isErr = false;
+  lang = 'it';
 
   constructor(
     private userService: UserService,
@@ -25,7 +26,7 @@ export class UsersComponent implements OnInit {
 
   getUsers() {
     this.userService.getUsers().subscribe((pData) => {
-      this.users = pData;
+      this.newsList = pData;
     });
 
 
