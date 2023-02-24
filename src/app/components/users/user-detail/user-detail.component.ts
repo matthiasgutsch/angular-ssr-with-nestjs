@@ -6,7 +6,6 @@ import {SeoService} from "../../../services/seo.service";
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.scss', '../users.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class UserDetailComponent implements OnInit {
