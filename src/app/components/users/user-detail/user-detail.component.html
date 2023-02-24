@@ -1,6 +1,8 @@
 <main *ngIf="user">
     <h1 [innerHTML]="user.title.rendered"></h1>
-    <mat-spinner diameter="20" *ngIf="showSpinner"></mat-spinner>
+    <h3 [innerHTML]="user.excerpt.rendered"></h3>
+    <p [innerHTML]="user.content.rendered"></p>
+
     <ng-container *ngIf="isErr">
         There was a problem in the API communication.<br>Please try again later.
     </ng-container>

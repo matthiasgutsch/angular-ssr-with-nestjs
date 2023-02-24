@@ -26,8 +26,6 @@ export class UsersComponent implements OnInit {
   getUsers() {
     this.userService.getUsers().subscribe((pData) => {
       this.users = pData;
-      this.showSpinner = false;
-
     });
 
 
