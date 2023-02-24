@@ -13,7 +13,8 @@ export class UserDetailComponent implements OnInit {
 
   showSpinner = true;
   userId;
-  user;
+  user: any = [];
+
   isErr = false;
 
   constructor(
@@ -23,23 +24,19 @@ export class UserDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.seoService.updateTitle('User Detail - Angular SSR');
     this.userId = this.activatedRoute.snapshot.paramMap.get('id');
+
     if (this.userId) {
       this.getUser();
     }
   }
 
   getUser() {
-    this.userService.getUser(this.userId)
-      .subscribe((res: any) => {
-        this.user = res.data;
-        this.seoService.updateTitle(this.user.first_name + ' ' + this.user.last_name + ' - Angular SSR');
-        this.showSpinner = false;
-      }, (err: any) => {
-        this.isErr = true;
+    this.user = this.userService.getUser(this.userId).subscribe((res) => {
+      this.user[0] = res;
+        this.seoService.updateTitle(this.user[0].title.rendered + ' - Angular SSR');
         this.showSpinner = false;
       });
-  }
 
-}
+    };
+  }

@@ -12,11 +12,11 @@ export class UserService {
   ) { }
 
   getUsers() {
-    return this.http.get(`${this.apiUrl}/users?per_page=12&delay=2`);
+    return this.http.get(`${this.apiUrl}/posts`);
   }
 
   getUser(id) {
-    return this.http.get(`${this.apiUrl}/users/${id}`);
+    return this.http.get(`${this.apiUrl}/posts/${id}`);
   }
 
 }

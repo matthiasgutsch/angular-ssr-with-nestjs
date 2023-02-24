@@ -10,7 +10,7 @@ import {SeoService} from "../../services/seo.service";
 export class UsersComponent implements OnInit {
 
   showSpinner = true;
-  users = [];
+  users: any = [];
   isErr = false;
 
   constructor(
@@ -24,14 +24,13 @@ export class UsersComponent implements OnInit {
   }
 
   getUsers() {
-    this.userService.getUsers()
-      .subscribe((res: any) => {
-        this.users = res.data;
-        this.showSpinner = false;
-      }, (err: any) => {
-        this.isErr = true;
-        this.showSpinner = false;
-      });
+    this.userService.getUsers().subscribe((pData) => {
+      this.users = pData;
+      this.showSpinner = false;
+
+    });
+
+
   }
 
 }

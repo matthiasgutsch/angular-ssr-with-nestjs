@@ -22,7 +22,7 @@ import {HttpClientModule} from "@angular/common/http";
     MatToolbarModule
   ],
   providers: [
-    { provide: 'apiUrl', useValue: 'https://reqres.in/api' }
+    { provide: 'apiUrl', useValue: 'https://ict-group.it/wp-json/wp/v2' }
   ],
   bootstrap: [AppComponent]
 })

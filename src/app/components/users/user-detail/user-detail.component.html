@@ -1,17 +1,8 @@
-<main>
-  <h1>User Detail</h1>
-  <mat-spinner diameter="20" *ngIf="showSpinner"></mat-spinner>
-  <div class="user" *ngIf="!showSpinner && user">
-    <a class="user-link">
-      <img class="user-avatar" [src]="user.avatar" alt="xxx">
-      <strong class="user-name">{{ user.first_name + ' ' + user.last_name }}</strong>
-    </a>
-    <div class="email">
-      <img src="assets/svg/at-sign.svg" class="icon" alt="Email">
-      {{ user.email }}
-    </div>
-  </div>
-  <ng-container *ngIf="isErr">
-    There was a problem in the API communication.<br>Please try again later.
-  </ng-container>
+<main *ngIf="user">
+    <h1>User Detail 3</h1>
+    <mat-spinner diameter="20" *ngIf="showSpinner"></mat-spinner>
+    {{user[0] | json}}
+    <ng-container *ngIf="isErr">
+        There was a problem in the API communication.<br>Please try again later.
+    </ng-container>
 </main>
