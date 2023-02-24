@@ -13,7 +13,7 @@ export class UserDetailComponent implements OnInit {
 
   showSpinner = true;
   userId;
-  user: any = [];
+  user: any;
 
   isErr = false;
 
@@ -24,7 +24,7 @@ export class UserDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.userId = this.activatedRoute.snapshot.paramMap.get('id');
+    this.userId = this.activatedRoute.snapshot.paramMap.get('slug');
 
     if (this.userId) {
       this.getUser();
@@ -33,8 +33,8 @@ export class UserDetailComponent implements OnInit {
 
   getUser() {
     this.user = this.userService.getUser(this.userId).subscribe((res) => {
-      this.user[0] = res;
-        this.seoService.updateTitle(this.user[0].title.rendered + ' - Angular SSR');
+      this.user = res[0];
+        this.seoService.updateTitle(this.user.title.rendered + '');
         this.showSpinner = false;
       });
 

@@ -16,7 +16,7 @@ export class UserService {
   }
 
   getUser(id) {
-    return this.http.get(`${this.apiUrl}/posts/${id}`);
+    return this.http.get(`${this.apiUrl}/posts/?slug=${id}`);
   }
 
 }

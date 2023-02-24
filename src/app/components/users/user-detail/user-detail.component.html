@@ -1,7 +1,6 @@
 <main *ngIf="user">
-    <h1>User Detail 3</h1>
+    <h1 [innerHTML]="user.title.rendered"></h1>
     <mat-spinner diameter="20" *ngIf="showSpinner"></mat-spinner>
-    {{user[0] | json}}
     <ng-container *ngIf="isErr">
         There was a problem in the API communication.<br>Please try again later.
     </ng-container>

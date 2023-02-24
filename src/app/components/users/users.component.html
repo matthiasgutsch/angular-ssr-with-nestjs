@@ -4,12 +4,10 @@
     <mat-spinner diameter="20" *ngIf="showSpinner"></mat-spinner>
     <ul class="user-list">
         <li class="user" *ngFor="let user of users">
-            <a class="user-link" routerLink="/users/{{ user.id }}" [title]="user.first_name + ' ' + user.last_name">
+            <a class="user-link" routerLink="/users/{{ user.slug }}">
                 <strong class="user-name">{{ user.title.rendered}}</strong>
             </a>
-            <div class="email">
-                <img src="assets/svg/at-sign.svg" class="icon" alt="Email"> {{ user.email }}
-            </div>
+
         </li>
     </ul>
     <ng-container *ngIf="isErr">

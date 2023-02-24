@@ -5,7 +5,7 @@ import { UsersComponent } from './users.component';
 
 const routes: Routes = [
   { path: '', component: UsersComponent, pathMatch: 'full' },
-  { path: ':id', loadChildren: () => import('./user-detail/user-detail.module').then(m => m.UserDetailModule) }
+  { path: ':slug', loadChildren: () => import('./user-detail/user-detail.module').then(m => m.UserDetailModule) }
 ];
 
 @NgModule({
