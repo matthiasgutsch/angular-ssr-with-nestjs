@@ -10,6 +10,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { UserDetailComponent } from './components/users/user-detail/user-detail.component';
 import { UsersComponent } from './components/users/users.component';
 import { enableProdMode } from '@angular/core';
+import { AboutComponent } from './components/about/about.component';
 
 
 enableProdMode();
@@ -19,7 +20,8 @@ enableProdMode();
     AppComponent,
     UserDetailComponent,
     UsersComponent,
-    HeaderComponent
+    HeaderComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

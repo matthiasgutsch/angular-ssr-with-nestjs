@@ -1,0 +1,28 @@
+<section class="header header-fixed-top">
+    <div class="container">
+
+        <div class="navbar">
+
+            <div class="navbar-header">
+                <a class="navbar-brand" [routerLink]="['/']"><img alt="Logo" src="https://ict-group.it/wp-content/themes/ict/images/logo.svg" class="header-brand"></a>
+            </div>
+
+            <ul class="nav navbar-nav menu-hidden">
+
+                <li *ngFor="let menu of menuItems" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a [routerLink]="menu.link" [title]="menu.title">{{ menu.title }}</a>
+                </li>
+
+                <li>
+                    <a data-toggle="modal" data-target="#search"><i class="fa fa-search" aria-hidden="true"></i> </a>
+                </li>
+
+                <li class="dropdown menu-large">
+                    <a class="dropdown-toggle btn-blue-menu sections">Prodotti</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</section>

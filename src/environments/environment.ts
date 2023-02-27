@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: true
+  production: true,
+  baseUrl: 'https://ict-group.it/wp-json/wp/v2',
+  baseAcfUrl: 'https://ict-group.it/wp-json/acf/v3/',
 };
 
 /*
